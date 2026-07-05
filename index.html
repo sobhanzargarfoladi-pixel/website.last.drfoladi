@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دکتر محمد زرگرفولادی - متخصص جراحی عمومی</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazir', sans-serif;
+            background: linear-gradient(135deg, #0a0118 0%, #1a0b2e 50%, #16213e 100%);
+            color: #e0e7ff;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 1, 24, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(167, 139, 250, 0.2);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #22d3ee, #a78bfa);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #0a0118;
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            font-size: 0.85rem;
+            color: #a78bfa;
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #22d3ee;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #a78bfa;
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(167, 139, 250, 0.1);
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #22d3ee, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #c7d2fe;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #22d3ee, #a78bfa);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(167, 139, 250, 0.4);
+            box-shadow: 0 20px 60px rgba(34, 211, 238, 0.2);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #22d3ee, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: #c7d2fe;
+            line-height: 1.8;
+        }
+
+        /* Payment Box */
+        .payment-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 16px;
+            padding: 1.8rem 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .payment-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #a78bfa;
+        }
+
+        .price {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #22d3ee;
+            margin-bottom: 1.5rem;
+        }
+
+        /* کارت بانکی حرفه‌ای */
+        .bank-card {
+            position: relative;
+            background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 45%, #0e7490 100%);
+            border-radius: 18px;
+            padding: 1.6rem 1.4rem;
+            margin-bottom: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(76, 29, 149, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .bank-card::before {
+            content: '';
+            position: absolute;
+            top: -60%;
+            left: -60%;
+            width: 220%;
+            height: 220%;
+            background: linear-gradient(60deg, transparent 40%, rgba(255, 255, 255, 0.18) 50%, transparent 60%);
+            animation: shine 4s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-40%) rotate(0deg); }
+            100% { transform: translateX(40%) rotate(0deg); }
+        }
+
+        .bank-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.6rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .bank-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .card-chip {
+            width: 42px;
+            height: 32px;
+            border-radius: 6px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            position: relative;
+            box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-chip::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+        .card-number {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 3px;
+            direction: ltr;
+            text-align: center;
+            margin: 0.5rem 0 1.4rem;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+            font-family: 'Courier New', monospace;
+        }
+
+        .bank-card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-holder-label {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.2rem;
+        }
+
+        .card-holder-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .card-logo {
+            display: flex;
+            gap: -8px;
+        }
+
+        .card-logo span {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+        }
+
+        .card-logo span:first-child {
+            background: rgba(34, 211, 238, 0.85);
+        }
+
+        .card-logo span:last-child {
+            background: rgba(167, 139, 250, 0.85);
+            margin-right: -12px;
+        }
+
+        .copy-button {
+            width: 100%;
+            background: linear-gradient(90deg, #22d3ee, #a78bfa);
+            border: none;
+            color: #0a0118;
+            padding: 0.85rem 1.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Vazir', sans-serif;
+            box-shadow: 0 4px 15px rgba(34, 211, 238, 0.3);
+        }
+
+        .copy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(34, 211, 238, 0.5);
+        }
+
+        .instagram-link {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            color: #22d3ee;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .instagram-link:hover {
+            color: #a78bfa;
+        }
+
+        /* Services Section */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(167, 139, 250, 0.4);
+            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.15);
+        }
+
+        .service-item i {
+            font-size: 2rem;
+            color: #22d3ee;
+            margin-bottom: 1rem;
+        }
+
+        .service-item h4 {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .service-item p {
+            color: #c7d2fe;
+            font-size: 0.9rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(167, 139, 250, 0.1);
+        }
+
+        .stats-section h3 {
+            text-align: center;
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 2.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(167, 139, 250, 0.4);
+            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.15);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #22d3ee, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #22d3ee;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #c7d2fe;
+            font-size: 1rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(167, 139, 250, 0.1);
+        }
+
+        .testimonials-section h3 {
+            text-align: center;
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 2.5rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 16px;
+            padding: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(167, 139, 250, 0.4);
+            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.15);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #22d3ee, #a78bfa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #0a0118;
+            font-weight: 700;
+        }
+
+        .testimonial-info h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-stars {
+            color: #fbbf24;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-text {
+            color: #c7d2fe;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(167, 139, 250, 0.1);
+        }
+
+        .faq-section h3 {
+            text-align: center;
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-icon {
+            color: #22d3ee;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+            color: #c7d2fe;
+            line-height: 1.8;
+        }
+
+        .faq-answer.active {
+            max-height: 300px;
+            padding: 0 1.5rem 1.2rem;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float i {
+            color: #ffffff;
+            font-size: 1.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 1, 24, 0.95);
+            border-top: 1px solid rgba(167, 139, 250, 0.2);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: #c7d2fe;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-contact {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+                width: 55px;
+                height: 55px;
+            }
+
+            .whatsapp-float i {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>دکتر محمد زرگرفولادی</h1>
+                    <p>متخصص جراحی عمومی</p>
+                </div>
+            </div>
+            <div class="header-contact">
+                <a href="tel:09188747966" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>۰۹۱۸۸۷۴۷۹۶۶</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h2>خوش آمدید</h2>
+            <p>ارائه خدمات تخصصی جراحی عمومی با بیش از ۱۵ سال تجربه</p>
+        </div>
+
+        <!-- Main Info Card -->
+        <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-stethoscope"></i>
+            </div>
+            <h3>درباره دکتر</h3>
+            <p>دکتر محمد زرگرفولادی با بیش از ۱۵ سال سابقه در زمینه جراحی عمومی، آماده ارائه خدمات تخصصی به شما عزیزان می‌باشد.</p>
+            
+            <div class="payment-box">
+                <div class="payment-title">هزینه ویزیت</div>
+                <div class="price">۳۷۰,۰۰۰ تومان</div>
+
+                <div class="bank-card">
+                    <div class="bank-card-top">
+                        <span class="bank-name">بانک سامان-بلو</span>
+                        <div class="card-chip"></div>
+                    </div>
+                    <div class="card-number">6219 8619 3422 2398</div>
+                    <div class="bank-card-bottom">
+                        <div>
+                            <div class="card-holder-label">صاحب کارت</div>
+                            <div class="card-holder-name">لیلا قربانی</div>
+                        </div>
+                        <div class="card-logo">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="copy-button" onclick="copyToClipboard()">
+                    <i class="fas fa-copy"></i> کپی شماره کارت
+                </button>
+
+                <a href="https://instagram.com/dr.mohammadzargarfoladi" class="instagram-link" target="_blank">
+                    <i class="fab fa-instagram"></i> اینستاگرام
+                </a>
+                <p>بعد از واریز مبلغ فیش را ارسال کنید</p>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <h3>آمار و ارقام</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="stat-number">+۱۵</div>
+                    <div class="stat-label">سال تجربه</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-procedures"></i>
+                    </div>
+                    <div class="stat-number">+۵۰۰</div>
+                    <div class="stat-label">جراحی موفق</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="stat-number">۹۸٪</div>
+                    <div class="stat-label">رضایت بیماران</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3>خدمات ارائه شده</h3>
+            <div class="services">
+                <div class="service-item">
+                    <i class="fas fa-user-injured"></i>
+                    <h4>جراحی‌های عمومی</h4>
+                    <p>انواع جراحی‌های عمومی با تجهیزات پیشرفته</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-notes-medical"></i>
+                    <h4>مشاوره پزشکی</h4>
+                    <p>مشاوره تخصصی قبل و بعد از جراحی</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-ambulance"></i>
+                    <h4>اورژانس</h4>
+                    <p>پذیرش بیماران اورژانسی ۲۴ ساعته</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials Section -->
+        <div class="testimonials-section">
+            <h3>نظرات بیماران</h3>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">ع</div>
+                        <div class="testimonial-info">
+                            <h4>علی محمدی</h4>
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        دکتر زرگرفولادی با دقت و مهارت بالا جراحی من رو انجام دادن. از تجربه و برخورد ایشون بسیار راضی هستم.
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">ز</div>
+                        <div class="testimonial-info">
+                            <h4>زهرا احمدی</h4>
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        پزشک بسیار دلسوز و با تجربه. توضیحات کامل قبل از جراحی و پیگیری بعد از عمل عالی بود.
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">م</div>
+                        <div class="testimonial-info">
+                            <h4>مهدی رضایی</h4>
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        از مهارت و دقت دکتر در جراحی واقعاً تحت تأثیر قرار گرفتم. پیشنهاد می‌کنم حتماً مراجعه کنید.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h3>سوالات متداول</h3>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>هزینه ویزیت چقدر است؟</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    هزینه ویزیت ۳۷۰,۰۰۰ تومان می‌باشد. لطفاً قبل از مراجعه واریز نمایید و رسید را همراه داشته باشید.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>چگونه نوبت بگیرم؟</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    برای نوبت‌گیری می‌توانید با شماره ۰۹۱۸۸۷۴۷۹۶۶ تماس بگیرید یا از طریق واتساپ پیام دهید.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>آدرس مطب کجاست؟</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    سقز، شهرک دانشگاه، پایین‌تر از سرای سالمندان، درمانگاه شبانه‌روزی نور، طبقه دوم
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>ساعات کاری چگونه است؟</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    شروع از ساعت 4:30 تا 10 شب
+                </div>
+            </div>
+        </div>
+
+        <!-- Address -->
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>آدرس مطب</h3>
+                <p>سقز، شهرک دانشگاه، پایین‌تر از سرای سالمندان، درمانگاه شبانه‌روزی نور، طبقه دوم</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>تماس با ما</h3>
+                <p><i class="fas fa-mobile-alt"></i> ۰۹۱۸۸۷۴۷۹۶۶</p>
+                <p style="margin-top: 1rem;">برای نوبت‌دهی و مشاوره با شماره فوق تماس بگیرید.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/989188747966" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>© ۱۴۰۵ دکتر محمد زرگرفولادی - تمامی حقوق محفوظ است</p>
+    </footer>
+
+    <script>
+        function copyToClipboard() {
+            const cardNumber = '6219861934222398';
+            navigator.clipboard.writeText(cardNumber).then(() => {
+                const button = document.querySelector('.copy-button');
+                button.innerHTML = '<i class="fas fa-check"></i> کپی شد ✓';
+                button.style.background = 'linear-gradient(90deg, #10b981, #059669)';
+                
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-copy"></i> کپی شماره کارت';
+                    button.style.background = 'linear-gradient(90deg, #22d3ee, #a78bfa)';
+                }, 2000);
+            });
+        }
+
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // Close all FAQs
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelectorAll('.faq-question').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked FAQ if it wasn't active
+            if (!isActive) {
+                answer.classList.add('active');
+                element.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
